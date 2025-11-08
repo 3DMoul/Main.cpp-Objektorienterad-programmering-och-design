@@ -23,7 +23,6 @@ int main()
 		cout << "[4] Visual representation of data" << endl;
 		cout << "[5] Search for readings" << endl;
 		cout << "[6] Exit program" << endl;
-		cout << "[7]" << endl;
 		cout << "---------------------------------" << endl;
 		string NumberChoice = "Choice between [1]-[6]";
 		int Choice = Utility.NumberChoice(NumberChoice);
@@ -40,7 +39,7 @@ int main()
 				cout << "If you dont want to simulate anything press [Q]" << endl;
 				char Des;
 				cin >> Des;
-				//använder toupper så man kan skriva bådde stor eller liten bokstav
+				//anvÃ¤nder toupper sÃ¥ man kan skriva bÃ¥dde stor eller liten bokstav
 				if ((char)toupper(Des) == 'T')
 				{
 					string TimeQuestion = "How many Temperature readings do you want to simulate?";
@@ -125,10 +124,10 @@ int main()
 					cout << "If you dont want to print anything press [Q]" << endl;
 					char Des;
 					cin >> Des;
-					//använder toupper så man kan skriva bådde stor eller liten bokstav
+					//anvÃ¤nder toupper sÃ¥ man kan skriva bÃ¥dde stor eller liten bokstav
 					if ((char)toupper(Des) == 'T')
 					{
-						//detta går igenom bådde <TemperatureSensor> och <AirqualitySensor>
+						//detta gÃ¥r igenom bÃ¥dde <TemperatureSensor> och <AirqualitySensor>
 						MainStorage.PrintTemperatureReadings();
 						Utility.ENTER();
 						PrintLoopisRunning = false;
@@ -300,12 +299,12 @@ int main()
 					cout << "If you dont want to print anything press [Q]" << endl;
 					char Des;
 					cin >> Des;
-					//använder toupper så man kan skriva bådde stor eller liten bokstav
+					//anvÃ¤nder toupper sÃ¥ man kan skriva bÃ¥dde stor eller liten bokstav
 					if ((char)toupper(Des) == 'T')
 					{
 						if (MainStorage.SizeOfTemperature() >= 1)
 						{
-							//detta går igenom bådde <TemperatureSensor> och <AirqualitySensor>
+							//detta gÃ¥r igenom bÃ¥dde <TemperatureSensor> och <AirqualitySensor>
 							MainStorage.Visulisation(Des);
 							Utility.ENTER();
 							VisualisationLoopRunning = false;
@@ -460,4 +459,5 @@ int main()
 		}
 
 	}
+
 }
