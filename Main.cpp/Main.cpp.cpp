@@ -114,7 +114,7 @@ int main()
 			bool PrintLoopisRunning = true;
 			while (PrintLoopisRunning == true)
 			{
-				if(MainStorage.SizeOfAirquality() >= 1 && MainStorage.SizeOfTemperature() >= 1)
+				if(MainStorage.SizeOfAirquality() >= 1 || MainStorage.SizeOfTemperature() >= 1)
 				{
 
 					cout << "You have [" << MainStorage.SizeOfAirquality() << "]" << " Airquality readings" << endl;
@@ -184,7 +184,7 @@ int main()
 			{
 				cout << "You have [" << MainStorage.SizeOfAirquality() << "] Airquality readings" << endl;
 				cout << "You have [" << MainStorage.SizeOfTemperature() << "] Temperature readings" << endl;
-				if (MainStorage.SizeOfAirquality() >= 1 && MainStorage.SizeOfTemperature() >= 1)
+				if (MainStorage.SizeOfAirquality() >= 1 || MainStorage.SizeOfTemperature() >= 1)
 				{
 					cout << "What do you want statistics of" << endl;
 					cout << "[T]emperature / [A]irquality / [B]oth" << endl;
@@ -292,7 +292,7 @@ int main()
 			while (VisualisationLoopRunning == true)
 			{
 
-				if (MainStorage.SizeOfAirquality() >= 1 && MainStorage.SizeOfTemperature() >= 1)
+				if (MainStorage.SizeOfAirquality() >= 1 || MainStorage.SizeOfTemperature() >= 1)
 				{
 					cout << "Do you want to print sensor readings" << endl;
 					cout << "[T]emperature / [A]irquality / [B]oth" << endl;
@@ -376,7 +376,7 @@ int main()
 			bool SearchIsRunning = true;
 			while (SearchIsRunning == true)
 			{	
-				if (MainStorage.SizeOfAirquality() >= 1 && MainStorage.SizeOfTemperature() >= 1)
+				if (MainStorage.SizeOfAirquality() >= 1 || MainStorage.SizeOfTemperature() >= 1)
 				{
 					cout << "What Sensor do you want a reading from" << endl;
 					cout << "You can search with [N]ames or [T]ime" << endl;
@@ -461,3 +461,4 @@ int main()
 	}
 
 }
+
