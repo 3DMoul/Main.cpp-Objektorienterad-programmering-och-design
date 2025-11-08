@@ -4,18 +4,17 @@
 #include <iostream>
 #include <fstream>
 using namespace std;
-
-double Utility::RandomTempreture()
+double Utility::RandomTempreture(double Min, double Max)
 {
     double f = (double)rand() / RAND_MAX;
-    double RandomTempreture = 20 + f * (40 - 20);
+    double RandomTempreture = Min + f * (Max - Min);
     return RandomTempreture;
 }
-int Utility::RandomAirquality()
+int Utility::RandomAirquality(int Max, int Min)
 {
-    return rand() % (100 - 1) + 1;
+    return rand() % (Min - Max) + Max;
 }
-int Utility::NumberChoice(std::string StringInput)
+int Utility::NumberChoice(string StringInput)
 {
     std::cout << StringInput << std::endl;
     int Choice;

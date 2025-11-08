@@ -125,12 +125,14 @@
   <ItemGroup>
     <ClCompile Include="AirqualitySensor.cpp" />
     <ClCompile Include="Main.cpp.cpp" />
+    <ClCompile Include="Measurement.cpp" />
     <ClCompile Include="Storage.cpp" />
     <ClCompile Include="TemperatureSensor.cpp" />
     <ClCompile Include="Utility.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AirqualitySensor.h" />
+    <ClInclude Include="Measurement.h" />
     <ClInclude Include="Storage.h" />
     <ClInclude Include="TemperatureSensor.h" />
     <ClInclude Include="Utility.h" />

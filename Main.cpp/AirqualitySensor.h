@@ -3,13 +3,12 @@
 #include <string>
 using namespace std;
 
-struct AirqualitySensor
+class AirqualitySensor
 {
-	//string SensorName;
-	int Airquality = 0;
+private:
+	double MinSimulation = 1, MaxSimulation = 100;
 	string UnitOfMeasurment = "%";
-	string TimeStamp;
-
-	void SensorReading(int NewAirquality, string NewTimeStamp);
-	void Read() const;
+public:
+	double Read();
+	string GetUnitOfMeasurment();
 };

@@ -1,14 +1,14 @@
 #include "TemperatureSensor.h"
+#include "Utility.h"
 #include <iostream>
 using namespace std;
-
-
-void TemperatureSensor::SensorReading(double NewTemperature, string NewTimeStamp)
+double TemperatureSensor::Read()
 {
-	Temperature = NewTemperature;
-	TimeStamp = NewTimeStamp;
+	Utility Misc;
+	double OutPut = Misc.RandomTempreture(MinSimulation, MaxSimulation);
+	return OutPut;
 }
-void TemperatureSensor::Read() const
+string TemperatureSensor::GetUnitOfMeasurment()
 {
-	cout << Temperature << " " << UnitOfMeasurment << " " << TimeStamp << endl;
+	return UnitOfMeasurment;
 }

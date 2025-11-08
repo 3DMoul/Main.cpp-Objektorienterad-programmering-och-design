@@ -1,14 +1,14 @@
 #include "AirqualitySensor.h"
+#include "Utility.h"
 #include <iostream>
 using namespace std;
-
-
-void AirqualitySensor::SensorReading(int NewAirquality, string NewTimeStamp)
+double AirqualitySensor::Read()
 {
-	Airquality = NewAirquality;
-	TimeStamp = NewTimeStamp;
+	Utility Misc;
+	double OutPut = Misc.RandomAirquality(MinSimulation, MaxSimulation);
+	return OutPut;
 }
-void AirqualitySensor::Read() const
+string AirqualitySensor::GetUnitOfMeasurment()
 {
-	cout << Airquality << " " << UnitOfMeasurment << " " << TimeStamp << endl;
+	return UnitOfMeasurment;
 }

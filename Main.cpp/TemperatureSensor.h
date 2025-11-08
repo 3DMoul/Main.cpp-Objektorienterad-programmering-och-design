@@ -3,14 +3,12 @@
 using namespace std;
 
 
-struct TemperatureSensor
+class TemperatureSensor
 {
-public:
-	//string SensorName;
-	double Temperature = 0.0;
+private:
+	double MinSimulation = 20, MaxSimulation = 40;
 	string UnitOfMeasurment = "C";
-	string TimeStamp;
-
-	void SensorReading(double NewTempereture, string NewTimeStamp);
-	void Read() const;
+public:
+	double Read();
+	string GetUnitOfMeasurment();
 };
