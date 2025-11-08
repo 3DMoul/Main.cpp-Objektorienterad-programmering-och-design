@@ -127,20 +127,31 @@ int main()
 					//använder toupper så man kan skriva bådde stor eller liten bokstav
 					if ((char)toupper(Des) == 'T')
 					{
-						//detta går igenom bådde <TemperatureSensor> och <AirqualitySensor>
-						MainStorage.PrintTemperatureReadings();
-						Utility.ENTER();
-						PrintLoopisRunning = false;
+						if (MainStorage.SizeOfTemperature() >= 1)
+						{
+							MainStorage.PrintTemperatureReadings();
+							PrintLoopisRunning = false;
+						}
+						else
+						{
+							cout << "you have no temperature readings" << endl;
+						}
 					}
 					else if ((char)toupper(Des) == 'A')
 					{
-						MainStorage.PrintAirqualityReadings();
-						Utility.ENTER();
-						PrintLoopisRunning = false;
+						if (MainStorage.SizeOfAirquality() >= 1)
+						{
+							MainStorage.PrintAirqualityReadings();
+							PrintLoopisRunning = false;
+						}
+						else
+						{
+							cout << "you have no airquality readings" << endl;
+						}
 					}
 					else if ((char)toupper(Des) == 'B')
 					{
-						if (MainStorage.SizeOfAirquality() > 1 && MainStorage.SizeOfTemperature() > 1)
+						if (MainStorage.SizeOfAirquality() >= 1 && MainStorage.SizeOfTemperature() >= 1)
 						{
 							MainStorage.PrintAll();
 						}
@@ -332,27 +343,23 @@ int main()
 						if (MainStorage.SizeOfAirquality() >= 1 && MainStorage.SizeOfTemperature() >= 1)
 						{
 							MainStorage.Visulisation(Des);
-							Utility.ENTER();
 							VisualisationLoopRunning = false;
 						}
 						else if (MainStorage.SizeOfAirquality() >= 1 && MainStorage.SizeOfTemperature() < 1)
 						{
 							cout << "You dont have any temperatur readings" << endl;
 							MainStorage.Visulisation(Des);
-							Utility.ENTER();
 							VisualisationLoopRunning = false;
 						}
 						else if (MainStorage.SizeOfAirquality() < 1 && MainStorage.SizeOfTemperature() >= 1)
 						{
 							cout << "You dont have any airquality readings" << endl;
 							MainStorage.Visulisation(Des);
-							Utility.ENTER();
 							VisualisationLoopRunning = false;
 						}
 					}
 					else if ((char)toupper(Des) == 'Q')
 					{
-						Utility.ENTER();
 						VisualisationLoopRunning = false;
 					}
 					else
@@ -390,15 +397,15 @@ int main()
 						{
 							cout << "what name does the sensor have: " << endl;
 							cout << "If you dont remember the name of sensor press [P] to print out list" << endl;
-							string SearchName;
+							char SearchName;
 							cin >> SearchName;
-							if (SearchName == "P")
+							if ((char)toupper(SearchName) == 'P')
 							{
 								MainStorage.PrintAll();
 							}
 							else
 							{
-								SearchNameRunning = MainStorage.SearchForName(SearchName);
+								SearchNameRunning = MainStorage.SearchForName(string(1,SearchName));
 							}
 						}
 						SearchIsRunning = false;
@@ -411,22 +418,21 @@ int main()
 							cout << "What TimeStamp does the sensor have: " << endl;
 							cout << "This is the template for the search (00:00:00)" << endl;
 							cout << "If you dont remember the Time of the reading press [P] to print out list" << endl;
-							string SearchTimeStamp;
+							char SearchTimeStamp;
 							cin >> SearchTimeStamp;
-							if (SearchTimeStamp == "P")
+							if ((char)toupper(SearchTimeStamp) == 'P')
 							{
 								MainStorage.PrintAll();
 							}
 							else
 							{
-								SearchTimeRunning = MainStorage.SearchForTimeStamp(SearchTimeStamp);
+								SearchTimeRunning = MainStorage.SearchForTimeStamp(string(1, SearchTimeStamp));
 							}
 						}
 						SearchIsRunning = false;
 					}
 					else if ((char)toupper(Des) == 'Q')
 					{
-						Utility.ENTER();
 						SearchIsRunning = false;
 					}
 					else
@@ -459,6 +465,4 @@ int main()
 		}
 
 	}
-
 }
-
