@@ -39,6 +39,7 @@ case 5
 gör while loop så man kan välja namn eller tid att söka på den kollar om man har värden i listan om man inte har det säger den att man inte har något att söka på
 om man har något att söka på så går den in i en while loop som runnar tills SearchTimeStamp() eller SearchForName() (beroende på vad man valde) ger bool SearchTimeRunning en false value  
 
+
 bool Storage::SearchForName(string Name)
 {
     for (int i = 0; i < size(MeasurmentsList); i++)
@@ -55,6 +56,8 @@ bool Storage::SearchForName(string Name)
     return true;
 
 }
+
+
 bool Storage::SearchForTimeStamp(string TimeStamp)
 {
     
